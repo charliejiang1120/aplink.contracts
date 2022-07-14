@@ -89,6 +89,7 @@ void farm::allot(const uint64_t& lease_id, const name& farmer, const asset& quan
     auto pid                    = allots.available_primary_key(); if (pid == 0) pid = 1;
 
     auto allot                  = allot_t(pid);
+    allot.lease_id              = lease_id;
     allot.farmer                = farmer;
     allot.apples                = quant;
     allot.alloted_at            = now;
